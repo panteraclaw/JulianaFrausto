@@ -48,7 +48,7 @@ export default function Navigation() {
             style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? 'none' : 'auto', transition: 'opacity 0.5s ease, transform 0.4s ease' }}
           >
             <span className={`font-light tracking-[0.5em] uppercase transition-all duration-500 ${scrolled ? 'text-xs text-white' : 'text-xl text-white'}`}>
-              Martina Gorozo
+              Juliana Frausto
             </span>
             <span className={`h-px bg-[#8a1c1c] transition-all duration-700 ${scrolled ? 'w-0' : 'w-full mt-2 group-hover:w-1/2'}`} />
           </Link>

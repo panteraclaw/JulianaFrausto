@@ -42,7 +42,7 @@ function SuccessContent() {
                 {isCrypto ? (
                     <div className="space-y-6">
                         <p className="text-[#8b7d7b] font-light">
-                            Your crypto payment has been verified on-chain. Martina will contact you soon to arrange shipping for your new artwork.
+                            Your crypto payment has been verified on-chain. Juliana will contact you soon to arrange shipping for your new artwork.
                         </p>
 
                         {txHash && (

@@ -90,5 +90,4 @@ Solo necesitas activarlo cuando Juliana decida monetizar.
 
 ---
 
-**Fork de**: [martina-store-2](https://github.com/ValenteCreativo/martina-store-2)  
 **Desarrollado por**: Pantera 🐆

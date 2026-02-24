@@ -2,7 +2,7 @@ import { isAuthorizedAdmin, summarizeOrders } from '../../lib/admin';
 
 describe('admin utils', () => {
   it('authorizes only the whitelisted email', () => {
-    expect(isAuthorizedAdmin('martinagorozo1@proton.me')).toBe(true);
+    expect(isAuthorizedAdmin('julianafrausto2211@gmail.com')).toBe(true);
     expect(isAuthorizedAdmin('other@example.com')).toBe(false);
     expect(isAuthorizedAdmin(null)).toBe(false);
   });

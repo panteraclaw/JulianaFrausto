@@ -78,7 +78,7 @@ export default function ShippingForm({ orderId, onSuccess, onClose }: ShippingFo
             Address Saved!
           </h3>
           <p className="text-sm text-[#606060]">
-            Martina will contact you soon with shipping details.
+            Juliana will contact you soon with shipping details.
           </p>
         </div>
       </div>

@@ -114,7 +114,7 @@ export default function TattooDetailPage() {
                         {/* Header Info */}
                         <div className="space-y-3 border-l-2 border-[#8a1c1c] pl-6">
                             <h1 className="text-3xl md:text-5xl font-light tracking-wide text-[#e5e5e5] uppercase">{artwork.title}</h1>
-                            <p className="text-[#8b7d7b] text-xs tracking-[0.3em] uppercase">Martina Gorozo • {artwork.year || new Date().getFullYear()}</p>
+                            <p className="text-[#8b7d7b] text-xs tracking-[0.3em] uppercase">Juliana Frausto • {artwork.year || new Date().getFullYear()}</p>
                         </div>
 
                         {/* Technical Specs */}

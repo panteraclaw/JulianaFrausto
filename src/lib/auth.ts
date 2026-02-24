@@ -27,7 +27,7 @@ export async function createUser(email: string, password: string, name?: string)
     email,
     passwordHash: hashedPassword,
     name,
-    isAdmin: email === 'martinagorozo1@proton.me', // Only Martina is admin
+    isAdmin: email === 'julianafrausto2211@gmail.com', // Only Juliana is admin
   }).returning();
 
   return user;

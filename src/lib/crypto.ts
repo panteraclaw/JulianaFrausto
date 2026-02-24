@@ -107,7 +107,7 @@ export type SupportedChainId = typeof SUPPORTED_CHAIN_IDS[number];
 export const DEFAULT_CHAIN_ID = 8453;
 
 // Whitelisted admin email
-export const ADMIN_EMAIL = 'martinagorozo1@proton.me';
+export const ADMIN_EMAIL = 'julianafrausto2211@gmail.com';
 
 // Check if email is whitelisted for admin
 export function isAdminEmail(email: string | null | undefined): boolean {

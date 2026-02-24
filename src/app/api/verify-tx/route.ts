@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Verify recipient (Martina's wallet)
+    // Verify recipient (Juliana's wallet)
     const recipientAddress = process.env.NEXT_PUBLIC_MARTINA_WALLET?.toLowerCase();
     if (!recipientAddress) {
       console.error('MARTINA_WALLET_ADDRESS not configured');
@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
     let validTransfer = false;
     for (const log of receipt.logs) {
       try {
-        // Check if this is a Transfer event to Martina's wallet
+        // Check if this is a Transfer event to Juliana's wallet
         if (log.topics[0] === '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef') {
           // Transfer event signature
           const to = `0x${log.topics[2]?.slice(26)}`.toLowerCase();
