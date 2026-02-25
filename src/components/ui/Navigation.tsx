@@ -65,7 +65,7 @@ export default function Navigation() {
             {/* Menu Trigger */}
             <button
               onClick={() => setIsOpen(true)}
-              className="group flex items-center gap-3 text-white hover:text-[#8a1c1c] transition-colors"
+              className="group flex items-center gap-3 text-gray-800 hover:text-[#f4d03f] transition-colors"
             >
               <span className="hidden md:block text-[10px] uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 Open

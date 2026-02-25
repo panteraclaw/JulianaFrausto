@@ -59,7 +59,7 @@ body {
   position: relative;
 }
 
-/* Watercolor splashes - subtle color touches */
+/* Watercolor splashes - VISIBLE artsy color touches */
 body::after {
   content: "";
   position: fixed;
@@ -69,18 +69,19 @@ body::after {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.12;
+  opacity: 0.35;
   background: 
-    radial-gradient(ellipse 600px 500px at 15% 25%, rgba(244, 208, 63, 0.25) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 600px at 85% 75%, rgba(107, 185, 240, 0.2) 0%, transparent 65%),
-    radial-gradient(ellipse 550px 550px at 50% 50%, rgba(255, 154, 162, 0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 450px at 10% 85%, rgba(181, 234, 215, 0.22) 0%, transparent 60%),
-    radial-gradient(ellipse 450px 400px at 90% 15%, rgba(255, 218, 185, 0.2) 0%, transparent 65%);
-  filter: blur(120px);
+    radial-gradient(ellipse 800px 700px at 15% 25%, rgba(244, 208, 63, 0.7) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 800px at 85% 75%, rgba(107, 185, 240, 0.6) 0%, transparent 55%),
+    radial-gradient(ellipse 750px 750px at 50% 50%, rgba(255, 154, 162, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 650px at 10% 85%, rgba(181, 234, 215, 0.65) 0%, transparent 50%),
+    radial-gradient(ellipse 650px 600px at 90% 15%, rgba(255, 218, 185, 0.6) 0%, transparent 55%),
+    radial-gradient(ellipse 500px 550px at 40% 60%, rgba(216, 191, 216, 0.4) 0%, transparent 65%);
+  filter: blur(100px);
   mix-blend-mode: multiply;
 }
 
-/* Paper texture */
+/* Paper texture - watercolor paper grain */
 body::before {
   content: "";
   position: fixed;
@@ -90,8 +91,12 @@ body::before {
   height: 100%;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.4;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='5' seed='15'/%3E%3CfeColorMatrix values='0 0 0 0 0.9, 0 0 0 0 0.9, 0 0 0 0 0.85, 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' fill='%23faf8f5'/%3E%3C/svg%3E");
+  opacity: 0.8;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3CfeColorMatrix values='0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 3px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 3px);
+  background-size: 200px 200px, 3px 3px, 3px 3px;
   mix-blend-mode: multiply;
 }
 
