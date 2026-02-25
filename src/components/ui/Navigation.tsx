@@ -55,13 +55,8 @@ export default function Navigation() {
             </div>
           </Link>
 
-          {/* Right Side - Wallet + Menu */}
+          {/* Right Side - Menu Only */}
           <div className="flex items-center gap-4 ml-auto">
-            {/* Wallet Button - Hidden on scroll for cleaner look */}
-            <div className={`hidden md:block transition-opacity duration-500 ${scrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-              <ConnectWalletWrapper compact={scrolled} />
-            </div>
-
             {/* Menu Trigger */}
             <button
               onClick={() => setIsOpen(true)}

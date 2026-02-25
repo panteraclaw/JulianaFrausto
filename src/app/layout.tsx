@@ -3,6 +3,7 @@ import { Comfortaa, Quicksand } from "next/font/google";
 import "./globals.css";
 import Navigation from "../components/ui/Navigation";
 import Providers from "./providers";
+import FloatingEyes from "../components/FloatingEyes";
 
 const comfortaa = Comfortaa({ variable: "--font-comfortaa", subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
 const quicksand = Quicksand({ variable: "--font-quicksand", subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${comfortaa.variable} ${quicksand.variable} antialiased sacred-bg`}>
         <Providers>
+          <FloatingEyes />
           <Navigation />
           {children}
         </Providers>

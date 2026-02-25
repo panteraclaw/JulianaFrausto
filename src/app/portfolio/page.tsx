@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { artworkService } from '../../lib/services';
 import type { Artwork } from '../../types';
 import BrushStroke from '../../components/ui/BrushStroke';
+import ConnectWalletWrapper from '../../components/ui/ConnectWalletWrapper';
 
 export default function PortfolioPage() {
   const [artworks, setArtworks] = useState<Artwork[]>([]);
@@ -47,6 +48,11 @@ export default function PortfolioPage() {
           <h1 className="text-3xl md:text-4xl font-light mb-2 tracking-wide text-gray-800">Galería</h1>
           <div className="w-32 h-3 mx-auto mt-8">
             <BrushStroke variant="short" className="w-full h-full" />
+          </div>
+
+          {/* Connect Wallet for purchases */}
+          <div className="mt-8 flex justify-center">
+            <ConnectWalletWrapper />
           </div>
 
           {/* Filters */}
