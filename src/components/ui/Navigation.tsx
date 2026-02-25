@@ -151,8 +151,7 @@ export default function Navigation() {
               className="absolute left-12 top-0 w-2 opacity-30 hidden md:block"
             >
               <BrushStroke variant="vertical" className="w-full h-full" />
-            
-          </motion.div>
+            </motion.div>
         )}
       </AnimatePresence>
     </>
