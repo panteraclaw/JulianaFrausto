@@ -85,7 +85,7 @@ export default function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.5, delay: 0.2 } }}
-            className="fixed inset-0 z-[999] bg-[#050505] flex flex-col items-center justify-center overflow-hidden"
+            className="fixed inset-0 z-[999] bg-[#0a0a0e] flex flex-col items-center justify-center overflow-hidden"
           >
             {/* Background Texture */}
             <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] pointer-events-none" />
@@ -93,7 +93,7 @@ export default function Navigation() {
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-8 right-8 md:top-12 md:right-12 text-white/50 hover:text-[#8a1c1c] transition-colors group"
+              className="absolute top-8 right-8 md:top-12 md:right-12 text-white/50 hover:text-[#f4d03f] transition-colors group"
             >
               <div className="flex flex-col items-center gap-2">
                 <X size={32} strokeWidth={0.5} className="transition-transform duration-500 group-hover:rotate-90" />
@@ -116,15 +116,17 @@ export default function Navigation() {
                     onClick={() => setIsOpen(false)}
                     className="group relative flex flex-col items-center"
                   >
-                    <span className="text-4xl md:text-6xl font-light tracking-[0.2em] uppercase text-[#e5e5e5] group-hover:text-[#8a1c1c] transition-colors duration-500">
+                    <span className="text-2xl md:text-3xl font-light tracking-wide uppercase text-[#e5e5e5] group-hover:text-[#f4d03f] transition-colors duration-500">
                       {item.label}
                     </span>
-                    <span className="text-xs text-[#404040] tracking-[0.4em] uppercase mt-2 group-hover:tracking-[0.8em] transition-all duration-500">
+                    <span className="text-xs text-[#404040] tracking-widest uppercase mt-2 opacity-70 group-hover:opacity-100 transition-all duration-500">
                       {item.sub}
                     </span>
 
-                    {/* Hover Thread */}
-                    <span className="absolute -bottom-4 left-1/2 w-0 h-px bg-[#8a1c1c] group-hover:w-full group-hover:left-0 transition-all duration-500" />
+                    {/* Hover Brushstroke */}
+                    <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-0 h-2 group-hover:w-24 transition-all duration-500 overflow-hidden">
+                      <BrushStroke variant="short" className="w-full h-full" />
+                    </div>
                   </Link>
                 </motion.div>
               ))}
@@ -146,8 +148,10 @@ export default function Navigation() {
               initial={{ height: 0 }}
               animate={{ height: "100%" }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="absolute left-12 top-0 w-px bg-gradient-to-b from-transparent via-[#8a1c1c]/30 to-transparent hidden md:block"
-            />
+              className="absolute left-12 top-0 w-2 opacity-30 hidden md:block"
+            >
+              <BrushStroke variant="vertical" className="w-full h-full" />
+            
           </motion.div>
         )}
       </AnimatePresence>
