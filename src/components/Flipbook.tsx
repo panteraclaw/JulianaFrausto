@@ -9,7 +9,7 @@ interface FlipbookPage {
   id: string;
   imageUrl: string;
   title: string;
-  orderIndex: number;
+  orderIndex: number | null;
 }
 
 interface FlipbookProps {
@@ -20,8 +20,12 @@ export default function Flipbook({ pages }: FlipbookProps) {
   const [currentPage, setCurrentPage] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  // Sort pages by orderIndex
-  const sortedPages = [...pages].sort((a, b) => a.orderIndex - b.orderIndex);
+  // Sort pages by orderIndex (handle null values by putting them at the end)
+  const sortedPages = [...pages].sort((a, b) => {
+    if (a.orderIndex === null) return 1;
+    if (b.orderIndex === null) return -1;
+    return a.orderIndex - b.orderIndex;
+  });
 
   const nextPage = () => {
     if (currentPage < sortedPages.length - 1) {

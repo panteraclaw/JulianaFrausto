@@ -19,8 +19,10 @@ export default function Home() {
       
       if (allArt) {
         // Filter artworks with category "flipbook" (case-insensitive)
+        // and ensure orderIndex is not null
         const flipbookPages = allArt.filter(art => 
-          art.category.toLowerCase().includes('flipbook')
+          art.category.toLowerCase().includes('flipbook') &&
+          art.orderIndex !== null
         );
         setPages(flipbookPages);
       }
