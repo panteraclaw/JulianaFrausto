@@ -10,7 +10,7 @@ import type { Artwork } from '../../types';
 export default function PortfolioPage() {
   const [artworks, setArtworks] = useState<Artwork[]>([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState<'all' | 'digital' | 'tattoo'>('all');
+  const [filter, setFilter] = useState<'all' | 'available' | 'sold'>('all');
 
   useEffect(() => {
     loadArtworks();
@@ -28,32 +28,35 @@ export default function PortfolioPage() {
   }
 
   const filteredArtworks = artworks.filter(art => {
+    // Exclude flipbook pages from portfolio
+    if (art.category.toLowerCase().includes('flipbook')) return false;
+    
     if (filter === 'all') return true;
-    if (filter === 'tattoo') return art.category.toLowerCase().includes('tattoo');
-    if (filter === 'digital') return !art.category.toLowerCase().includes('tattoo');
+    if (filter === 'available') return art.available;
+    if (filter === 'sold') return !art.available;
     return true;
   });
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-[#050505] text-[#e5e5e5]">
+    <main className="min-h-screen pt-32 pb-24 bg-[#0a0e0d] text-[#e5e5e5]">
       <div className="content-container max-w-6xl">
 
         {/* Header */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-24 text-center">
-          <h1 className="text-4xl md:text-5xl font-light mb-2 tracking-[0.2em] uppercase text-white">Portfolio</h1>
-          <div className="w-px h-12 bg-gradient-to-b from-[#8a1c1c] to-transparent mx-auto mt-8 opacity-50" />
+          <h1 className="text-4xl md:text-5xl font-light mb-2 tracking-[0.2em] uppercase text-white">Galería</h1>
+          <div className="w-px h-12 bg-gradient-to-b from-[#3b7a5c] to-transparent mx-auto mt-8 opacity-50" />
 
           {/* Filters */}
           <div className="flex justify-center gap-8 mt-12 text-[10px] tracking-[0.2em] uppercase text-[#404040]">
-            <button onClick={() => setFilter('all')} className={`hover:text-[#8a1c1c] transition-colors ${filter === 'all' ? 'text-white' : ''}`}>All Works</button>
-            <button onClick={() => setFilter('digital')} className={`hover:text-[#8a1c1c] transition-colors ${filter === 'digital' ? 'text-white' : ''}`}>Digital</button>
-            <button onClick={() => setFilter('tattoo')} className={`hover:text-[#8a1c1c] transition-colors ${filter === 'tattoo' ? 'text-white' : ''}`}>Ink</button>
+            <button onClick={() => setFilter('all')} className={`hover:text-[#3b7a5c] transition-colors ${filter === 'all' ? 'text-white' : ''}`}>Todas</button>
+            <button onClick={() => setFilter('available')} className={`hover:text-[#3b7a5c] transition-colors ${filter === 'available' ? 'text-white' : ''}`}>Disponibles</button>
+            <button onClick={() => setFilter('sold')} className={`hover:text-[#3b7a5c] transition-colors ${filter === 'sold' ? 'text-white' : ''}`}>Vendidas</button>
           </div>
         </motion.div>
 
         {loading ? (
           <div className="flex justify-center items-center min-h-[400px]">
-            <div className="w-1 h-1 bg-[#8a1c1c] animate-pulse-slow" />
+            <div className="w-1 h-1 bg-[#3b7a5c] animate-pulse-slow" />
           </div>
         ) : (
           /* MUSEUM ARCHIVE LAYOUT: Small Images, Text Focus */

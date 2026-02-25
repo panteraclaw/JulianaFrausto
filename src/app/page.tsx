@@ -35,9 +35,9 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#050505]">
+      <div className="min-h-screen flex items-center justify-center bg-[#0a0e0d]">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-2 h-2 bg-[#8a1c1c] rounded-full animate-pulse" />
+          <div className="w-2 h-2 bg-[#3b7a5c] rounded-full animate-pulse" />
           <span className="text-xs text-gray-400 uppercase tracking-widest">
             Cargando obra...
           </span>

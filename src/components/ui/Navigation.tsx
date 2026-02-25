@@ -21,10 +21,9 @@ export default function Navigation() {
 
   const navItems = [
     { href: '/', label: 'Home', sub: 'Inicio' },
-    { href: '/portfolio', label: 'Portfolio', sub: 'Trabajos' },
-    { href: '/tattoos', label: 'Tattoos', sub: 'Ink' },
-    { href: '/blog', label: 'Journal', sub: 'Blog' },
-    { href: '/about', label: 'About', sub: 'Conóceme' },
+    { href: '/portfolio', label: 'Portfolio', sub: 'Galería' },
+    { href: '/blog', label: 'Blog', sub: 'Escritos' },
+    { href: '/about', label: 'Acerca de', sub: 'Sobre Juliana' },
   ];
 
   return (
