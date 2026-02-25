@@ -74,7 +74,7 @@ export default function BrushStroke({
       viewBox="0 0 200 12"
       className={`${className}`}
       style={{ opacity: 0.7 }}
-      preserveAspectReset="none"
+      preserveAspectRatio="none"
     >
       <path
         d="M2,6 Q50,3 100,6 Q150,9 198,6"
