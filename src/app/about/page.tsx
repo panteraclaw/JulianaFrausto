@@ -16,7 +16,7 @@ export default function AboutPage() {
               <div className="sacred-dot animate-subtle-glow" style={{ animationDelay: '1s' }} />
               <div className="sacred-dot animate-subtle-glow" style={{ animationDelay: '2s' }} />
             </div>
-            <h1 className="text-3xl md:text-4xl font-light mb-4 tracking-wide">Acerca de</h1>
+            <h1 className="text-2xl md:text-3xl font-light mb-4 tracking-wide text-gray-800">Acerca de</h1>
             <div className="w-32 h-3 mx-auto my-8">
               <BrushStroke variant="short" className="w-full h-full" />
             </div>
@@ -41,9 +41,9 @@ export default function AboutPage() {
               <a href="mailto:julianafrausto2211@gmail.com" className="flex items-center justify-center gap-3 btn-elegant w-full">
                 <Mail size={18} />julianafrausto2211@gmail.com
               </a>
-              <a href="https://instagram.com/julianafrausto" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/jules.frausto/" target="_blank" rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 btn-elegant w-full">
-                <Instagram size={18} />@julianafrausto
+                <Instagram size={18} />@jules.frausto
               </a>
             </div>
             <div className="mt-12 text-center">

@@ -61,34 +61,36 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center sacred-minimal">
+    <main className="min-h-screen flex items-center justify-center bg-white relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-md p-8"
+        className="w-full max-w-md p-8 relative z-10"
       >
-        <div className="glass-minimal p-12 rounded-lg">
+        <div className="bg-white/80 backdrop-blur-sm p-12 rounded-lg shadow-lg border border-[#e5e0d8]">
           <div className="text-center mb-8">
-            <div className="flex justify-center gap-2 mb-6">
-              <div className="sacred-dot animate-subtle-glow" />
-              <div className="sacred-dot animate-subtle-glow" style={{ animationDelay: '1s' }} />
-              <div className="sacred-dot animate-subtle-glow" style={{ animationDelay: '2s' }} />
-            </div>
-            <h1 className="text-3xl font-light tracking-wider mb-2">Acceso admin</h1>
-            <p className="text-sm text-[#8b7d7b] font-light">
-              Inicia con Privy usando el correo whitelisted.
+            <h1 className="text-2xl md:text-3xl font-light tracking-wide mb-4 text-gray-800">Acceso Admin</h1>
+            <p className="text-sm text-gray-600 font-light">
+              Inicia sesión con Privy usando el correo whitelisted:
+            </p>
+            <p className="text-xs text-[#f4d03f] font-medium mt-2">
+              {WHITELISTED_EMAIL}
             </p>
           </div>
 
-          {error && <div className="text-sm text-[#4a3434] text-center mb-4">{error}</div>}
+          {error && (
+            <div className="text-sm text-red-600 bg-red-50 p-3 rounded mb-4 text-center">
+              {error}
+            </div>
+          )}
 
           <button
             onClick={handleLogin}
             disabled={!ready || walletLoading || isChecking}
-            className="w-full btn-elegant"
+            className="w-full py-3 px-6 bg-[#f4d03f] text-gray-900 rounded-lg font-medium hover:bg-[#e5c030] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {!ready || isChecking ? 'Verificando...' : authenticated ? 'Entrar' : 'Sign in with Privy'}
+            {!ready || isChecking ? 'Verificando...' : authenticated ? 'Entrar' : 'Iniciar sesión con Privy'}
           </button>
         </div>
       </motion.div>

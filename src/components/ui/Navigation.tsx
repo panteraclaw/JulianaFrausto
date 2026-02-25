@@ -47,7 +47,7 @@ export default function Navigation() {
             className="group flex flex-col items-center absolute left-1/2 -translate-x-1/2"
             style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? 'none' : 'auto', transition: 'opacity 0.5s ease, transform 0.4s ease' }}
           >
-            <span className={`font-light tracking-[0.3em] uppercase transition-all duration-500 ${scrolled ? 'text-xs text-white' : 'text-lg md:text-xl text-white'}`}>
+            <span className={`font-light tracking-[0.3em] uppercase transition-all duration-500 ${scrolled ? 'text-xs text-gray-800' : 'text-lg md:text-xl text-gray-800'}`}>
               Juliana Frausto
             </span>
             <div className={`transition-all duration-700 overflow-hidden ${scrolled ? 'w-0 h-0' : 'w-full h-2 mt-3'}`}>
@@ -85,7 +85,7 @@ export default function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.5, delay: 0.2 } }}
-            className="fixed inset-0 z-[999] bg-[#0a0a0e] flex flex-col items-center justify-center overflow-hidden"
+            className="fixed inset-0 z-[999] bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center overflow-hidden"
           >
             {/* Background Texture */}
             <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] pointer-events-none" />
@@ -116,7 +116,7 @@ export default function Navigation() {
                     onClick={() => setIsOpen(false)}
                     className="group relative flex flex-col items-center"
                   >
-                    <span className="text-2xl md:text-3xl font-light tracking-wide uppercase text-[#e5e5e5] group-hover:text-[#f4d03f] transition-colors duration-500">
+                    <span className="text-2xl md:text-3xl font-light tracking-wide uppercase text-gray-800 group-hover:text-[#f4d03f] transition-colors duration-500">
                       {item.label}
                     </span>
                     <span className="text-xs text-[#404040] tracking-widest uppercase mt-2 opacity-70 group-hover:opacity-100 transition-all duration-500">

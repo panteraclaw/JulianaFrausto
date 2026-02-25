@@ -35,7 +35,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0e]">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="flex flex-col items-center gap-4">
           <div className="w-2 h-2 bg-[#f4d03f] rounded-full animate-pulse" />
           <span className="text-xs text-gray-400 uppercase tracking-widest">

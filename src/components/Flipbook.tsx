@@ -59,7 +59,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
 
   if (sortedPages.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0e] text-white">
+      <div className="min-h-screen flex items-center justify-center bg-white text-gray-800">
         <p className="text-sm uppercase tracking-widest opacity-50">
           No hay páginas disponibles aún
         </p>
@@ -90,7 +90,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
   const currentPageData = sortedPages[currentPage];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0e] flex flex-col relative">
+    <div className="min-h-screen bg-white flex flex-col relative">
       {/* Watercolor background overlay */}
       <div className="fixed inset-0 pointer-events-none z-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-radial from-[#f4d03f]/20 via-transparent to-transparent" />
@@ -98,7 +98,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 p-6 md:p-8 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent">
-        <h1 className="text-xl md:text-2xl font-light tracking-[0.2em] text-white uppercase">
+        <h1 className="text-xl md:text-2xl font-light tracking-[0.2em] text-gray-800 uppercase">
           Juliana Frausto
         </h1>
         <div className="flex items-center gap-4">
@@ -160,7 +160,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
               >
                 <div className="space-y-6">
                   {/* Title */}
-                  <h2 className="text-3xl md:text-4xl font-light text-white tracking-wide">
+                  <h2 className="text-3xl md:text-4xl font-light text-gray-800 tracking-wide">
                     {currentPageData.title}
                   </h2>
 
@@ -218,7 +218,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
           <button
             onClick={prevPage}
             disabled={currentPage === 0}
-            className="absolute left-0 md:-left-20 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 border border-[#1a1a2a] flex items-center justify-center text-white disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#f4d03f] hover:border-[#f4d03f] transition-all duration-300 backdrop-blur-sm z-10"
+            className="absolute left-0 md:-left-20 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 border border-[#1a1a2a] flex items-center justify-center text-gray-800 disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#f4d03f] hover:border-[#f4d03f] transition-all duration-300 backdrop-blur-sm z-10"
             aria-label="Previous page"
           >
             <ChevronLeft size={24} />
@@ -227,7 +227,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
           <button
             onClick={nextPage}
             disabled={currentPage === sortedPages.length - 1}
-            className="absolute right-0 md:-right-20 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 border border-[#1a1a2a] flex items-center justify-center text-white disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#f4d03f] hover:border-[#f4d03f] transition-all duration-300 backdrop-blur-sm z-10"
+            className="absolute right-0 md:-right-20 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 border border-[#1a1a2a] flex items-center justify-center text-gray-800 disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#f4d03f] hover:border-[#f4d03f] transition-all duration-300 backdrop-blur-sm z-10"
             aria-label="Next page"
           >
             <ChevronRight size={24} />

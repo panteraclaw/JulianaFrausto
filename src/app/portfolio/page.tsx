@@ -39,21 +39,21 @@ export default function PortfolioPage() {
   });
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-[#0a0a0e] text-[#e5e5e5]">
+    <main className="min-h-screen pt-32 pb-24 bg-white text-[#e5e5e5]">
       <div className="content-container max-w-6xl">
 
         {/* Header */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-24 text-center">
-          <h1 className="text-3xl md:text-4xl font-light mb-2 tracking-wide text-white">Galería</h1>
+          <h1 className="text-3xl md:text-4xl font-light mb-2 tracking-wide text-gray-800">Galería</h1>
           <div className="w-32 h-3 mx-auto mt-8">
             <BrushStroke variant="short" className="w-full h-full" />
           </div>
 
           {/* Filters */}
           <div className="flex justify-center gap-8 mt-12 text-[10px] tracking-[0.2em] uppercase text-[#404040]">
-            <button onClick={() => setFilter('all')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'all' ? 'text-white' : ''}`}>Todas</button>
-            <button onClick={() => setFilter('available')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'available' ? 'text-white' : ''}`}>Disponibles</button>
-            <button onClick={() => setFilter('sold')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'sold' ? 'text-white' : ''}`}>Vendidas</button>
+            <button onClick={() => setFilter('all')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'all' ? 'text-gray-800' : ''}`}>Todas</button>
+            <button onClick={() => setFilter('available')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'available' ? 'text-gray-800' : ''}`}>Disponibles</button>
+            <button onClick={() => setFilter('sold')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'sold' ? 'text-gray-800' : ''}`}>Vendidas</button>
           </div>
         </motion.div>
 
