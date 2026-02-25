@@ -59,7 +59,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
 
   if (sortedPages.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0a0e0d] text-white">
+      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0e] text-white">
         <p className="text-sm uppercase tracking-widest opacity-50">
           No hay páginas disponibles aún
         </p>
@@ -90,10 +90,10 @@ export default function Flipbook({ pages }: FlipbookProps) {
   const currentPageData = sortedPages[currentPage];
 
   return (
-    <div className="min-h-screen bg-[#0a0e0d] flex flex-col relative">
+    <div className="min-h-screen bg-[#0a0a0e] flex flex-col relative">
       {/* Watercolor background overlay */}
       <div className="fixed inset-0 pointer-events-none z-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-radial from-[#3b7a5c]/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-radial from-[#f4d03f]/20 via-transparent to-transparent" />
       </div>
 
       {/* Header */}
@@ -104,7 +104,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
         <div className="flex items-center gap-4">
           <button
             onClick={() => setShowDetails(!showDetails)}
-            className="text-xs text-gray-400 tracking-widest uppercase hover:text-[#3b7a5c] transition-colors"
+            className="text-xs text-gray-400 tracking-widest uppercase hover:text-[#f4d03f] transition-colors"
           >
             {showDetails ? 'Ocultar' : 'Info'} (I)
           </button>
@@ -133,7 +133,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
                   opacity: { duration: 0.3 },
                   rotateY: { duration: 0.5 },
                 }}
-                className="absolute inset-0 bg-[#0f1312] rounded-lg overflow-hidden shadow-2xl border border-[#1a2a24]"
+                className="absolute inset-0 bg-[#0f1312] rounded-lg overflow-hidden shadow-2xl border border-[#1a1a2a]"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <Image
@@ -156,7 +156,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}
                 transition={{ duration: 0.3 }}
-                className="flex-1 relative aspect-[3/4] bg-[#0f1312] rounded-lg border border-[#1a2a24] p-8 md:p-12 flex flex-col justify-center shadow-2xl"
+                className="flex-1 relative aspect-[3/4] bg-[#0f1312] rounded-lg border border-[#1a1a2a] p-8 md:p-12 flex flex-col justify-center shadow-2xl"
               >
                 <div className="space-y-6">
                   {/* Title */}
@@ -165,13 +165,13 @@ export default function Flipbook({ pages }: FlipbookProps) {
                   </h2>
 
                   {/* Divider */}
-                  <div className="h-px bg-gradient-to-r from-[#3b7a5c] to-transparent" />
+                  <div className="h-px bg-gradient-to-r from-[#f4d03f] to-transparent" />
 
                   {/* Metadata */}
                   <div className="space-y-3 text-sm md:text-base">
                     {currentPageData.year && (
                       <div className="flex gap-3">
-                        <span className="text-[#3b7a5c] font-medium uppercase tracking-widest text-xs">
+                        <span className="text-[#f4d03f] font-medium uppercase tracking-widest text-xs">
                           Año:
                         </span>
                         <span className="text-gray-300">{currentPageData.year}</span>
@@ -180,7 +180,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
 
                     {currentPageData.technique && (
                       <div className="flex gap-3">
-                        <span className="text-[#3b7a5c] font-medium uppercase tracking-widest text-xs">
+                        <span className="text-[#f4d03f] font-medium uppercase tracking-widest text-xs">
                           Técnica:
                         </span>
                         <span className="text-gray-300">{currentPageData.technique}</span>
@@ -189,7 +189,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
 
                     {currentPageData.medium && (
                       <div className="flex gap-3">
-                        <span className="text-[#3b7a5c] font-medium uppercase tracking-widest text-xs">
+                        <span className="text-[#f4d03f] font-medium uppercase tracking-widest text-xs">
                           Medio:
                         </span>
                         <span className="text-gray-300">{currentPageData.medium}</span>
@@ -200,7 +200,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
                   {/* Description */}
                   {currentPageData.description && (
                     <>
-                      <div className="h-px bg-gradient-to-r from-transparent via-[#1a2a24] to-transparent" />
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#1a1a2a] to-transparent" />
                       <p className="text-gray-400 leading-relaxed text-sm md:text-base">
                         {currentPageData.description}
                       </p>
@@ -209,7 +209,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
                 </div>
 
                 {/* Decorative corner */}
-                <div className="absolute bottom-8 right-8 w-12 h-12 border-r border-b border-[#3b7a5c]/30" />
+                <div className="absolute bottom-8 right-8 w-12 h-12 border-r border-b border-[#f4d03f]/30" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -218,7 +218,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
           <button
             onClick={prevPage}
             disabled={currentPage === 0}
-            className="absolute left-0 md:-left-20 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 border border-[#1a2a24] flex items-center justify-center text-white disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#3b7a5c] hover:border-[#3b7a5c] transition-all duration-300 backdrop-blur-sm z-10"
+            className="absolute left-0 md:-left-20 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 border border-[#1a1a2a] flex items-center justify-center text-white disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#f4d03f] hover:border-[#f4d03f] transition-all duration-300 backdrop-blur-sm z-10"
             aria-label="Previous page"
           >
             <ChevronLeft size={24} />
@@ -227,7 +227,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
           <button
             onClick={nextPage}
             disabled={currentPage === sortedPages.length - 1}
-            className="absolute right-0 md:-right-20 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 border border-[#1a2a24] flex items-center justify-center text-white disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#3b7a5c] hover:border-[#3b7a5c] transition-all duration-300 backdrop-blur-sm z-10"
+            className="absolute right-0 md:-right-20 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 border border-[#1a1a2a] flex items-center justify-center text-white disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[#f4d03f] hover:border-[#f4d03f] transition-all duration-300 backdrop-blur-sm z-10"
             aria-label="Next page"
           >
             <ChevronRight size={24} />
@@ -247,7 +247,7 @@ export default function Flipbook({ pages }: FlipbookProps) {
               }}
               className={`h-1 rounded-full transition-all duration-300 ${
                 idx === currentPage 
-                  ? 'w-8 bg-[#3b7a5c]' 
+                  ? 'w-8 bg-[#f4d03f]' 
                   : 'w-2 bg-gray-600 hover:bg-gray-400'
               }`}
               aria-label={`Go to page ${idx + 1}`}

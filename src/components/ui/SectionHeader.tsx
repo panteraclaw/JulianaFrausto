@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import BrushStroke from "./BrushStroke";
 
 interface SectionHeaderProps {
     title: string;
@@ -27,34 +28,19 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
                     align === "right" ? "text-right" : "text-left"
                     }`}
             >
-                <h2 className="text-2xl md:text-3xl font-light tracking-[0.2em] uppercase text-white mb-2">
+                <h2 className="text-xl md:text-2xl font-light tracking-[0.15em] text-white mb-2">
                     {title}
                 </h2>
                 {subtitle && (
-                    <p className="text-xs md:text-sm text-[#8b7d7b] tracking-[0.3em] uppercase opacity-70 font-mono">
+                    <p className="text-xs md:text-sm text-[#8b7d7b] tracking-[0.2em] opacity-70">
                         {subtitle}
                     </p>
                 )}
             </motion.div>
 
-            {/* The Thread (Stitch) */}
-            <div className="relative h-[2px] w-full">
-                {/* Thread Line */}
-                <svg
-                    className="w-full h-full absolute top-0 left-0"
-                    preserveAspectRatio="none"
-                >
-                    <line
-                        x1="0"
-                        y1="50%"
-                        x2="100%"
-                        y2="50%"
-                        stroke="var(--accent)"
-                        strokeWidth="1"
-                        strokeDasharray="4 12"
-                        opacity="0.8"
-                    />
-                </svg>
+            {/* Brush Stroke Divider */}
+            <div className="relative h-3 w-full max-w-md mx-auto">
+                <BrushStroke variant="horizontal" className="w-full h-full" />
             </div>
         </div>
     );

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { artworkService } from '../../lib/services';
 import type { Artwork } from '../../types';
+import BrushStroke from '../../components/ui/BrushStroke';
 
 export default function PortfolioPage() {
   const [artworks, setArtworks] = useState<Artwork[]>([]);
@@ -38,25 +39,27 @@ export default function PortfolioPage() {
   });
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-[#0a0e0d] text-[#e5e5e5]">
+    <main className="min-h-screen pt-32 pb-24 bg-[#0a0a0e] text-[#e5e5e5]">
       <div className="content-container max-w-6xl">
 
         {/* Header */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-24 text-center">
-          <h1 className="text-4xl md:text-5xl font-light mb-2 tracking-[0.2em] uppercase text-white">Galería</h1>
-          <div className="w-px h-12 bg-gradient-to-b from-[#3b7a5c] to-transparent mx-auto mt-8 opacity-50" />
+          <h1 className="text-3xl md:text-4xl font-light mb-2 tracking-wide text-white">Galería</h1>
+          <div className="w-32 h-3 mx-auto mt-8">
+            <BrushStroke variant="short" className="w-full h-full" />
+          </div>
 
           {/* Filters */}
           <div className="flex justify-center gap-8 mt-12 text-[10px] tracking-[0.2em] uppercase text-[#404040]">
-            <button onClick={() => setFilter('all')} className={`hover:text-[#3b7a5c] transition-colors ${filter === 'all' ? 'text-white' : ''}`}>Todas</button>
-            <button onClick={() => setFilter('available')} className={`hover:text-[#3b7a5c] transition-colors ${filter === 'available' ? 'text-white' : ''}`}>Disponibles</button>
-            <button onClick={() => setFilter('sold')} className={`hover:text-[#3b7a5c] transition-colors ${filter === 'sold' ? 'text-white' : ''}`}>Vendidas</button>
+            <button onClick={() => setFilter('all')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'all' ? 'text-white' : ''}`}>Todas</button>
+            <button onClick={() => setFilter('available')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'available' ? 'text-white' : ''}`}>Disponibles</button>
+            <button onClick={() => setFilter('sold')} className={`hover:text-[#f4d03f] transition-colors ${filter === 'sold' ? 'text-white' : ''}`}>Vendidas</button>
           </div>
         </motion.div>
 
         {loading ? (
           <div className="flex justify-center items-center min-h-[400px]">
-            <div className="w-1 h-1 bg-[#3b7a5c] animate-pulse-slow" />
+            <div className="w-1 h-1 bg-[#f4d03f] animate-pulse-slow" />
           </div>
         ) : (
           /* MUSEUM ARCHIVE LAYOUT: Small Images, Text Focus */

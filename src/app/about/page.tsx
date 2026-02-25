@@ -2,6 +2,7 @@
 
 import { Instagram, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
+import BrushStroke from '../../components/ui/BrushStroke';
 
 export default function AboutPage() {
   return (
@@ -15,8 +16,10 @@ export default function AboutPage() {
               <div className="sacred-dot animate-subtle-glow" style={{ animationDelay: '1s' }} />
               <div className="sacred-dot animate-subtle-glow" style={{ animationDelay: '2s' }} />
             </div>
-            <h1 className="text-5xl md:text-6xl font-light mb-4 tracking-wider">About</h1>
-            <div className="divider my-8" />
+            <h1 className="text-3xl md:text-4xl font-light mb-4 tracking-wide">Acerca de</h1>
+            <div className="w-32 h-3 mx-auto my-8">
+              <BrushStroke variant="short" className="w-full h-full" />
+            </div>
           </div>
 
           <div className="prose prose-invert max-w-none space-y-8">

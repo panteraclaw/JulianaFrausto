@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ConnectWalletWrapper from './ConnectWalletWrapper';
+import BrushStroke from './BrushStroke';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,10 +47,12 @@ export default function Navigation() {
             className="group flex flex-col items-center absolute left-1/2 -translate-x-1/2"
             style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? 'none' : 'auto', transition: 'opacity 0.5s ease, transform 0.4s ease' }}
           >
-            <span className={`font-light tracking-[0.5em] uppercase transition-all duration-500 ${scrolled ? 'text-xs text-white' : 'text-xl text-white'}`}>
+            <span className={`font-light tracking-[0.3em] uppercase transition-all duration-500 ${scrolled ? 'text-xs text-white' : 'text-lg md:text-xl text-white'}`}>
               Juliana Frausto
             </span>
-            <span className={`h-px bg-[#8a1c1c] transition-all duration-700 ${scrolled ? 'w-0' : 'w-full mt-2 group-hover:w-1/2'}`} />
+            <div className={`transition-all duration-700 overflow-hidden ${scrolled ? 'w-0 h-0' : 'w-full h-2 mt-3'}`}>
+              <BrushStroke variant="short" className="w-full h-full" />
+            </div>
           </Link>
 
           {/* Right Side - Wallet + Menu */}
